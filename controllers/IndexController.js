@@ -1,6 +1,7 @@
 const apiResponse = require("../helpers/apiResponse");
 const mailer = require("../helpers/nodeMailer");
-const { serviceLandCharacteristic } = require("../helpers/masterFunction")
+const { sendRequestToMidtrans } = require("../helpers/masterFunction")
+const { generate } = require("../helpers/randGen")
 
 const IndexController = {
     index: async (req, res) => {
@@ -58,10 +59,22 @@ const IndexController = {
         return apiResponse.successResponse(res, 'Key: '+req.query.key);
     },
 
-    serviceLandCharacteristic: async (req, res) => {
-        const data = await serviceLandCharacteristic(req.query.village_id)
-        return apiResponse.successResponseWithData(res, 'Data retrieved', data);
+    testPayment: async (req, res) => {
+        const resp = await sendRequestToMidtrans()
+        // console.log({resp});
+        return apiResponse.successResponseWithData(res, 'Send Data to Midtrans Successfull.', resp);
+
     },
+
+    randString: (req, res) => {
+        const rand = generate(80, false)
+        return apiResponse.successResponseWithData(res, 'Random String', rand);
+    },
+
+    // serviceLandCharacteristic: async (req, res) => {
+    //     const data = await serviceLandCharacteristic(req.query.village_id)
+    //     return apiResponse.successResponseWithData(res, 'Data retrieved', data);
+    // },
     
 }
 

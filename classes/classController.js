@@ -4,7 +4,7 @@ const apiResponse = require("../helpers/apiResponse");
 
 function controller(model) {
     let router = Router();
-    router.get('/', async (req, res) => {
+    router.get('/', async (req, res, next) => {
         try {
             const datas = await model.getAll()
 
@@ -16,7 +16,7 @@ function controller(model) {
         }
     })
     
-    router.get('/detail/:id', async(req, res)=>{
+    router.get('/detail/:id', async (req, res, next)=>{
         try {
             const data = await model.getById(req.params.id)
 
@@ -28,7 +28,7 @@ function controller(model) {
         }
     })
     
-    router.post('/create',async(req, res)=>{
+    router.post('/create',async (req, res, next)=>{
         try {
             const data = await model.insert(req.body)
 
@@ -38,7 +38,7 @@ function controller(model) {
         }
     })
     
-    router.put('/update/:id', async (req, res) => {
+    router.put('/update/:id', async (req, res, next) => {
         try {
             const data = await model.update({ id: req.params.id }, model.convertParam(body))
 
@@ -48,7 +48,7 @@ function controller(model) {
         }
     })
 
-    router.delete('/delete/:id',async(req, res)=>{
+    router.delete('/delete/:id',async (req, res, next)=>{
         try {
             const data = await model.delete({ id: req.params.id }, model.convertParamDeleted(body))
 
@@ -58,7 +58,7 @@ function controller(model) {
         }
     })
     
-    router.get('/paging/:page/:perPage', async (req, res) => {
+    router.get('/paging/:page/:perPage', async (req, res, next) => {
 
         try {
             const { page, perPage } = req.params;

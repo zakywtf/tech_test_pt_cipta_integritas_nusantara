@@ -1,7 +1,7 @@
 {
-  "name": "tandhur-backend",
+  "name": "beehive-payment-services",
   "version": "1.0.0",
-  "description": "Very Simple API for tandhur-backend",
+  "description": "Very Simple API for beehive-payment-services",
   "author": {
     "name": "Nova Zaky",
     "email": "novazaky1@gmail.com"
@@ -14,6 +14,8 @@
   "dependencies": {
     "async": "^3.2.0",
     "aws-sdk": "^2.720.0",
+    "axios": "^1.2.2",
+    "base-64": "^1.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
@@ -36,6 +38,7 @@
     "multer": "^1.4.2",
     "multer-s3": "^2.9.0",
     "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.1",
     "nodemailer": "^6.4.11",
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",

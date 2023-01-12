@@ -5,19 +5,19 @@ dotenv.config()
 const bcrypt = require("bcryptjs");
 
 let mongoose =  require('mongoose');
-let model = require('./models/users')
+let model = require('./schemas/users')
 
 mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true });
 
 const createAdmin = async () => {
-    let passwordHash = await bcrypt.hash('adminbeehive1!' + process.env.SALT, 10);
+    let passwordHash = await bcrypt.hash('12345678' + process.env.SALT, 10);
 
     let admin = new model({
         password: passwordHash,
         email: 'admin@beehivedrones.com',
         name: 'Admin Beehive',
         role: 'admin',
-        phone: ''
+        phone: '08324378979'
     });
 
     await admin.save()
