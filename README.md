@@ -1,6 +1,6 @@
-# service-tandhur-v1
+# beehive-payment-services
 
-REST API for service-tandhur.
+Beehive and Lumbung Payment Gateway Services.
 
 # Requiments:
 
@@ -11,7 +11,7 @@ REST API for service-tandhur.
 Dev Enviroments:
 
 ```cmd
-$ cd service-tandhur-v1
+$ cd beehive-payment-services
 $ npm install
 $ npm run dev
 ```
@@ -19,7 +19,7 @@ $ npm run dev
 Production Enviroments:
 
 ```cmd
-$ cd service-tandhur-v1
+$ cd beehive-payment-services
 $ npm install
 $ npm start
 ```
@@ -27,7 +27,7 @@ $ npm start
 Run on
 
 ```cmd
-localhost:3003
+localhost:3005
 ```
 
 # API documentation:
@@ -60,4 +60,4 @@ localhost:3003
 Coming soon
 ```
 
-# service-tandhur-v1
+# beehive-payment-services
