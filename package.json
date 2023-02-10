@@ -1,7 +1,7 @@
 {
-  "name": "beehive-payment-services",
+  "name": "beehive-company-profile",
   "version": "1.0.0",
-  "description": "Very Simple API for beehive-payment-services",
+  "description": "Very Simple API for beehive-company-profile",
   "author": {
     "name": "Nova Zaky",
     "email": "novazaky1@gmail.com"
@@ -44,6 +44,7 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "pug": "2.0.0-beta11"
   }
 }

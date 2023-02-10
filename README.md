@@ -1,6 +1,6 @@
-# beehive-payment-services
+# beehive-company-profile
 
-Beehive and Lumbung Payment Gateway Services.
+Beehive company profile.
 
 # Requiments:
 
@@ -11,7 +11,7 @@ Beehive and Lumbung Payment Gateway Services.
 Dev Enviroments:
 
 ```cmd
-$ cd beehive-payment-services
+$ cd beehive-company-profile
 $ npm install
 $ npm run dev
 ```
@@ -19,7 +19,7 @@ $ npm run dev
 Production Enviroments:
 
 ```cmd
-$ cd beehive-payment-services
+$ cd beehive-company-profile
 $ npm install
 $ npm start
 ```
@@ -60,4 +60,4 @@ localhost:3005
 Coming soon
 ```
 
-# beehive-payment-services
+# beehive-company-profile

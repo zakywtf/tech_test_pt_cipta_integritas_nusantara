@@ -37,7 +37,7 @@ const uploadS3 = multer({
             var split = file.originalname.split('.')
             var name = split[0].replace(/[^A-Z0-9]/ig, "_")+'.'+split[1]
             var fullname = Date.now().toString() + '_' + name
-            var fullpath = `undangan-online/${file.fieldname}/` + fullname
+            var fullpath = `company-profile/${file.fieldname}/` + fullname
             // console.log({fullpath});
             cb(null, fullpath);
         },
@@ -47,43 +47,11 @@ const uploadS3 = multer({
     }
 }).fields([
     {
-        name: 'photo_bridegroom_a',
+        name: 'services',
         maxCount: 1
     },
     {
-        name: 'photo_bridegroom_b',
-        maxCount: 1
-    },
-    {
-        name: 'galleries',
-        maxCount: 10
-    },
-    {
-        name: 'image_slider',
-        maxCount: 5
-    },
-    {
-        name: 'greetings_image',
-        maxCount: 1
-    },
-    {
-        name: 'ceremonial_photo',
-        maxCount: 1
-    },
-    {
-        name: 'wedding_photo',
-        maxCount: 1
-    },
-    {
-        name: 'music',
-        maxCount: 1
-    },
-    {
-        name: 'template',
-        maxCount: 1
-    },
-    {
-        name: 'proof_of_payment',
+        name: 'clients',
         maxCount: 1
     }
 ]);

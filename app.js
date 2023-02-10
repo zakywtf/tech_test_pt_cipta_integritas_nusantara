@@ -46,6 +46,10 @@ if (process.env.NODE_ENV != 'development') {
     app.use(logger('combined'));
 }
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

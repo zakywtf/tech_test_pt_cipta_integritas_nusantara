@@ -1,26 +1,23 @@
 const apiResponse = require("../helpers/apiResponse");
 const mailer = require("../helpers/nodeMailer");
-const { sendRequestToMidtrans } = require("../helpers/masterFunction")
+const Users = require("../schemas/users");
+const CatServices = require("../schemas/category_services");
+
 const { generate } = require("../helpers/randGen")
 
 const IndexController = {
+
     index: async (req, res) => {
-        if ( req.query.id ) {
-            const rgxVal = new RegExp(req.query.id, 'i');
-            var qry = {
-                $or: [ 
-                    { code: rgxVal }
-                ]
-            };
-            const data = await Webdata.findOne(qry)
-            return apiResponse.successResponseWithData(res, 'Data retrieved', data)
+        const services = await CatServices.find({ isDeleted: false })
 
-        } else {
-            // res.redirect(301, 'https://idepreneursclub.org')
-            return apiResponse.successResponse(res, 'Index')
+        res.render('public/home/index', { services });
+        // res.render('notfound')
+    },
 
-        }
-        
+    service: async (req, res) => {
+
+        // res.render('public/home/index', { services });
+        // res.render('notfound')
     },
 
     ping: (req, res) => {
@@ -57,13 +54,6 @@ const IndexController = {
 
     reduceLimits: async (req, res) => {
         return apiResponse.successResponse(res, 'Key: '+req.query.key);
-    },
-
-    testPayment: async (req, res) => {
-        const resp = await sendRequestToMidtrans()
-        // console.log({resp});
-        return apiResponse.successResponseWithData(res, 'Send Data to Midtrans Successfull.', resp);
-
     },
 
     randString: (req, res) => {

@@ -1,0 +1,33 @@
+// JavaScript Libraries
+script(src="/assets/lib/jquery/jquery.min.js")
+script(src="/assets/lib/jquery/jquery-migrate.min.js")
+script(src="/assets/lib/bootstrap/js/bootstrap.bundle.min.js")
+script(src="/assets/lib/easing/easing.min.js")
+script(src="/assets/lib/superfish/hoverIntent.js")
+script(src="/assets/lib/superfish/superfish.min.js")
+script(src="/assets/lib/wow/wow.min.js")
+script(src="/assets/lib/owlcarousel/owl.carousel.min.js")
+script(src="/assets/lib/magnific-popup/magnific-popup.min.js")
+script(src="/assets/lib/sticky/sticky.js")
+// Contact Form JavaScript File
+script(src="/assets/contactform/contactform.js")
+// Template Main Javascript File
+script(src="/assets/js/main.js")
+// Custom js
+script(src="/assets/js/custom.js")
+script(src="/assets/js/floating-wpp.js")
+
+script(type="text/javascript").
+	$(function () {
+		$('#myButton').floatingWhatsApp({
+			phone: '62818999771',
+			popupMessage: 'How can I help you?',
+			message: "",
+			showPopup: true,
+			showOnIE: false,
+			headerTitle: 'Beehivedrones is your solution',
+			headerColor: "#00796a",
+			backgroundColor: "#00796a",
+			buttonImage: '<img src="/assets/image/whatsapp.svg" />'
+		});
+	});
