@@ -1,0 +1,40 @@
+extends ../layouts/base
+
+block content 
+
+	section#intro-services
+		.intro-services-content(style="width: 100%; height: 80vh; position: relative; background: url('/assets/image/banner/forestry-bg.png') no-repeat; background-size: cover;")
+			#about.container.title-service.wow.fadeInRight
+				h2 FORESTRY
+				p Combining Drone technology with best forestry expert, Beehive Drones offers services that can ease the burden of forestry industries.
+	// #intro
+	main#main
+		//
+			==========================
+			Forestry Section
+			============================
+		section#services-intro.wow.fadeInUp
+			.container
+				.row
+					.col-lg-12
+						.section-header
+							h2 Forest’s resources need to be utilized in measurable and precise manner to ensure their sustainability.
+							p However, the landscape and the size of forest area often offer big challenges especially for maintenance and production forecasting.
+				.row
+					.col-lg-12
+						.box.wow.fadeInLeft
+							.row
+								.col-lg-4.service-img
+									img(src="/assets/image/services/agriculture-aerial-analysis.jpg", alt="Aerial Analysis")
+								.col-lg-8
+									h4.title-card-service AERIAL ANALYSIS
+									p.description Beehive Drones offers comperhensive Aerial Analysis services. Consist of small team of 3 - 7 persons, Aerial Analysis services are capable to cover large area in faster pace compare to conventional ways. The services are divided into several segments: Data Acquisition, Data Analysis, and Advanced Data Analysis.
+									div
+										a.btn-get-talk(href="service_aerial_analysis.html") Learn More
+							br
+		// #about
+		br
+		br
+
+		
+		include work-with-us.pug

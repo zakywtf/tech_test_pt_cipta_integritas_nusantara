@@ -2,23 +2,51 @@ header#header
 	.container
 		#logo.pull-left
 			a.scrollto(href="/")
-				img(src="assets/image/logo/new-logo-color.png", alt="logo-beehive", style="width: 220px; height: 50px;")
+				img(src="/assets/image/logo/new-logo-color.png", alt="logo-beehive", style="width: 220px; height: 50px;")
 		nav#nav-menu-container
 			ul.nav-menu
-				li.menu-active
-					a(href="index.html") Home
-				li.menu-has-children
-					a(href=) Services
-					ul
-						each serv in services
-							-let text = serv.name;
-							-let name = text.toLowerCase();
-							li
-								a(href="/service/"+name) #{serv.name}
-				li
-					a(href="blog.html") Blog
-				li
-					a(href="career.html") Career
-				li(class="book_appointment")
-					a(href="book_appointment.html", style="color: white;") Book Appointment
+				if (active_menu === 'home')
+					li.menu-active 
+						a(href="/") Home
+				else
+					li
+						a(href="/") Home
+
+				if (active_menu === 'service')
+					li.menu-has-children.menu-active
+						a(href=) Services
+						ul
+							each serv in services
+								-let text = serv.name;
+								-let name = text.toLowerCase();
+								li
+									a(href="/service/"+name) #{serv.name}
+				else
+					li.menu-has-children
+						a(href=) Services
+						ul
+							each serv in services
+								-let text = serv.name;
+								-let name = text.toLowerCase();
+								li
+									a(href="/service/"+name) #{serv.name}
+				
+
+				if (active_menu === 'blog')
+					li.menu-active 
+						a(href="/blog") Blog
+				else
+					li
+						a(href="/blog") Blog
+
+
+				if (active_menu === 'career')
+					li.menu-active 
+						a(href="/career") Career
+				else
+					li
+						a(href="/career") Career 
+
+				li.book_appointment
+					a(href="/book-appointment", style="color: white;") Book Appointment
 		// #nav-menu-container
