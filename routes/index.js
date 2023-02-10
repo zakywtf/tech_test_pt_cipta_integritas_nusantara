@@ -5,6 +5,7 @@ const IndexController = require('../controllers/IndexController');
 
 router.get('/', IndexController.index);
 router.get('/service/:category', IndexController.service);
+router.get('/career', IndexController.career);
 
 
 router.get('/ping', IndexController.ping);

@@ -2,6 +2,7 @@ const apiResponse = require("../helpers/apiResponse");
 const mailer = require("../helpers/nodeMailer");
 const Users = require("../schemas/users");
 const CatServices = require("../schemas/category_services");
+const Careers = require("../schemas/careers");
 
 const { generate } = require("../helpers/randGen")
 
@@ -46,13 +47,17 @@ const IndexController = {
 
     career: async (req, res) => {
         const services = await CatServices.find({ isDeleted: false })
+        const careers = await Careers.find({})
         const active_menu = 'career'
         const head_title = 'Beehivedrones Job Vacancies, Check Out the Position!'
 
-        res.render('public/career/index', { head_title, active_menu, services });
+        res.render('public/career/index', { head_title, active_menu, services, careers });
     },
 
 
+
+    // ==========================================================================================================================================
+    
     ping: (req, res) => {
         return apiResponse.successResponse(res, 'Pong');
     },

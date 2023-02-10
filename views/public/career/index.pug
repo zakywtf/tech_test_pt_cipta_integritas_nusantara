@@ -1,0 +1,91 @@
+extends ../layouts/base
+
+block content 
+
+	section#intro-services
+		.intro-services-content(style="width: 100%; height: 80vh; position: relative; background: url('assets/image/career/cover.png') no-repeat; background-size: cover;")
+			#about.container.title-service.wow.fadeInRight
+				h2 Make an Impact
+				p On a daily basis, Beehive Drones employees work on programs and projects with the potential to notably impact our lives. Our employees take pride in solving hard problems that can have tangible impacts on our future.
+	// #intro
+	main#main
+		//
+			==========================
+			Content Section
+			============================
+		section#services-intro.wow.fadeInUp
+			.container
+				br
+				.row
+					.col-lg-12
+						.section-header
+							h2 Our Values
+				br
+				br
+				.row
+					.col-lg-4.wow.fadeInLeft(style="text-align: center;")
+						img(src="assets/image/career/problem-solve.png", alt="Problem Solver")
+						br
+						br
+						br
+						h2(style="font-weight: 800; color: #134280") Problem Solver
+					.col-lg-4.wow.fadeInUp(style="text-align: center;")
+						img(src="assets/image/career/innovative.png", alt="Innovative")
+						br
+						br
+						br
+						h2(style="font-weight: 800; color: #134280") Innovative
+					.col-lg-4.wow.fadeInRight(style="text-align: center;")
+						img(src="assets/image/career/efficient.png", alt="Efficient")
+						br
+						br
+						br
+						h2(style="font-weight: 800; color: #134280") Efficient
+				br
+				br
+				.row
+					.col-lg-12
+						.section-header
+							br
+							br
+							br
+							h1(style="color: #134280; font-size: 50px; font-weight: 800; text-align: center;") “We are PROUD to be the BEES”
+							br
+							br
+							p(style="text-align: center; line-height: 35px;") At Beehive Drones, we are actively developing technologies with the potential to change the course of life.. We believe that hard work and innovative solutions result in big gains, so we prioritize hiring top talent and cultivating a culture based on merit. All Beehive Drones employees directly contribute to making our mission a reality.
+							p(style="text-align: center; line-height: 35px;") Beehive Drones is looking for world-class talents who are ready to tackle challenging futuristic projects. Take a look on some job opportunities we have that offers a competitive salary. Build your future with Beehive Drones!
+				br
+				br
+				br
+				.row
+					.col-lg-12
+						.section-header
+							h2 Open Position
+				br
+				each career in careers
+					.row
+						.col-lg-12
+							h5 #{career.position}
+					.row
+						.col-lg-12
+							h3 #{career.job}
+					.row
+						.col-lg-9
+							span.badge.badge-pill.bg-info(style="font-size: 13px; color: white;") #{career.location} 
+							|
+							|
+							span.badge.badge-pill.bg-info(style="font-size: 13px; color: white;") #{career.work_type}
+						.col-lg-3
+							a(href="/career/detail/"+career._id)
+								button.button.button-view View 
+									i.fa.fa-chevron-right
+					hr
+					br
+				br
+				br
+		// #about
+		br
+		br
+		br
+		br
+		br
