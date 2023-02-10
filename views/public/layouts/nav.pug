@@ -5,6 +5,7 @@ header#header
 				img(src="/assets/image/logo/new-logo-color.png", alt="logo-beehive", style="width: 220px; height: 50px;")
 		nav#nav-menu-container
 			ul.nav-menu
+				// home menu
 				if (active_menu === 'home')
 					li.menu-active 
 						a(href="/") Home
@@ -12,6 +13,7 @@ header#header
 					li
 						a(href="/") Home
 
+				// service menu
 				if (active_menu === 'service')
 					li.menu-has-children.menu-active
 						a(href=) Services
@@ -32,6 +34,7 @@ header#header
 									a(href="/service/"+name) #{serv.name}
 				
 
+				// blog menu
 				if (active_menu === 'blog')
 					li.menu-active 
 						a(href="/blog") Blog
@@ -40,12 +43,14 @@ header#header
 						a(href="/blog") Blog
 
 
+				// career menu
 				if (active_menu === 'career')
 					li.menu-active 
 						a(href="/career") Career
 				else
 					li
 						a(href="/career") Career 
+
 
 				li.book_appointment
 					a(href="/book-appointment", style="color: white;") Book Appointment

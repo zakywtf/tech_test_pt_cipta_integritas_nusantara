@@ -54,10 +54,16 @@ const IndexController = {
         res.render('public/career/index', { head_title, active_menu, services, careers });
     },
 
+    book_appointment: async (req, res) => {
+        const services = await CatServices.find({ isDeleted: false })
+        const active_menu = ''
+        const head_title = 'Book Appoinment | Beehive Drones'
 
+        res.render('public/book_appointment/index', { head_title, active_menu, services });
+    },
 
     // ==========================================================================================================================================
-    
+
     ping: (req, res) => {
         return apiResponse.successResponse(res, 'Pong');
     },
