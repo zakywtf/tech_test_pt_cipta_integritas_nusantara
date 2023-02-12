@@ -7,6 +7,7 @@ router.get('/', IndexController.index);
 router.get('/service/:category', IndexController.service);
 router.get('/career', IndexController.career);
 router.get('/book-appointment', IndexController.book_appointment);
+router.get('/service/detail/:title', IndexController.detail_service);
 
 // Routes Test
 router.get('/ping', IndexController.ping);

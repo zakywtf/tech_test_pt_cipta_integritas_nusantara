@@ -14,7 +14,7 @@ let sch = new Schema({
     description: {
         type: String,
     },
-    image: {
+    content: {
         type: String
     },
     isDeleted: {
@@ -29,4 +29,4 @@ let sch = new Schema({
 sch.plugin(timestamp);
 sch.plugin(require('mongoose-autopopulate'))
 
-module.exports = mongoose.model("category_services", sch);
+module.exports = mongoose.model("services", sch);

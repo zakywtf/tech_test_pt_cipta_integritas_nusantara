@@ -62,6 +62,14 @@ const IndexController = {
         res.render('public/book_appointment/index', { head_title, active_menu, services });
     },
 
+    detail_service: async (req, res) => {
+        const services = await CatServices.find({ isDeleted: false })
+        const active_menu = 'service'
+        const head_title = 'Get Drone Aerial Analysis Services | Beehive Drones'
+
+        res.render('public/service/detail/' + req.params.title, { head_title, active_menu, services });
+    },
+
     // ==========================================================================================================================================
 
     ping: (req, res) => {
