@@ -1096,11 +1096,27 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 15px;
 }
 
+#contact .form #successmessage {
+  color: green;
+  display: none;
+  border: 1px solid green;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
 #contact .form #sendmessage.show,
 #contact .form #errormessage.show,
 #contact .form .show {
   display: block;
 }
+
+#contact .form #successmessage.show,
+#contact .form .show {
+  display: block;
+}
+
 
 #contact .form .validation {
   color: red;

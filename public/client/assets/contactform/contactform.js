@@ -92,17 +92,19 @@ jQuery(document).ready(function($) {
     else var str = $(this).serialize();
     var action = $(this).attr('action');
     if( ! action ) {
-      action = 'contactform/contactform.php';
+      action = 'http://localhost:3005/web/v1/book-appointment/save';
     }
     $.ajax({
       type: "POST",
       url: action,
       data: str,
-      success: function(msg) {
-        // alert(msg);
-        if (msg == 'OK') {
+      success: function(data) {
+        console.log({data})
+        if (data.status == 200) {
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
+          $("#successmessage").addClass("show");
+          $('#successmessage').html(data.message);
           $('.contactForm').find("input, textarea").val("");
         } else {
           $("#sendmessage").removeClass("show");

@@ -22,5 +22,8 @@ router.get('/contact_us', IndexController.contactUs);
 // Routes Prefixes / API
 router.use('/api/v1', require('./api/index'));
 
+// Routes Web
+router.use('/web/v1', require('./web/index'));
+
 
 module.exports = router;

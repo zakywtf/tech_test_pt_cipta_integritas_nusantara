@@ -38,7 +38,8 @@ block content
 						.container
 							.form
 								#errormessage
-								form.contactForm(action="/book-appointment/insert", method="post", role="form")
+								#successmessage
+								form.contactForm(action="", method="post", role="form")
 									.form-row
 										.form-group.col-md-6
 											input#name.form-control(type="text", name="name", placeholder="Your Name", data-rule="minlen:4", data-msg="Please enter at least 4 chars")
@@ -51,28 +52,15 @@ block content
 											input#phone.form-control(type="text", name="phone", placeholder="Phone Number", data-rule="minlen:4", data-msg="Please enter at least 4 chars")
 											.validation
 										.form-group.col-md-6
-											input#company.form-control(type="email", name="company", placeholder="Company Name", data-rule="email", data-msg="Please enter a valid email")
+											input#company.form-control(type="text", name="company", placeholder="Company Name", data-rule="minlen:4", data-msg="Please enter a valid email")
 											.validation
 									.form-row
 										.form-group.col-md-6
 											include country.pug
 										.form-group.col-md-6
-											select.form-control(id="affiliation_sector", name="affiliation_sector")
-												option(value=) Affiliaton Sector
-												option(value="saab") Saab
-												option(value="fiat") Fiat
-												option(value="audi") Audi
-												option(value="saab") Saab
-												option(value="fiat") Fiat
-												option(value="audi") Audi
-												option(value="saab") Saab
-												option(value="fiat") Fiat
-												option(value="audi") Audi
-												option(value="saab") Saab
-												option(value="fiat") Fiat
-												option(value="audi") Audi
+											include affiliation_sector.pug
 									.form-group
-										input#city.form-control(type="text", name="city", placeholder="City", data-rule="minlen:4", data-msg="Please enter at least 8 chars of subject")
+										input#city.form-control(type="text", name="city", placeholder="City", data-rule="minlen:3", data-msg="Please enter at least 4 chars")
 										.validation
 									.form-group
 										textarea.form-control(name="message", rows="6", data-rule="required", data-msg="Please write something for us", placeholder="Message")
