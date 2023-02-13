@@ -1152,7 +1152,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-info h3 {
-  font-size: 30px;
+  font-size: 25px;
   margin: 0 0 20px 0;
   padding: 2px 0 2px 10px;
   line-height: 1;
@@ -1272,6 +1272,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   border: 0;
   padding: 6px 8px;
   width: 65%;
+  border: 1px solid white;
 }
 
 #footer .footer-top .footer-newsletter input[type="submit"] {
@@ -1283,10 +1284,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
   transition: 0.3s;
   cursor: pointer;
+  border: 1px solid white;
 }
 
 #footer .footer-top .footer-newsletter input[type="submit"]:hover {
-  background: #134280;
+  background: #6cb0f3;
 }
 
 #footer .copyright {

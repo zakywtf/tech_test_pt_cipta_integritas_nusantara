@@ -2,10 +2,11 @@ footer#footer
 	.footer-top
 		.container
 			.row
-				.col-lg-4.col-md-6.footer-info
+				.col-lg-3.col-md-6.footer-info
 					h3 Beehivedrones
 					p Beehive Drones, an Indonesian drone system technology company. We aim to improve, connect, and transform human lives through innovative drone system technology and advanced sensor network system.
-				.col-lg-4.col-md-6.footer-links
+				
+				.col-lg-3.col-md-6.footer-links
 					h4 Useful Links
 					ul
 						li
@@ -23,21 +24,24 @@ footer#footer
 						//- li
 						//- 	i.ion-ios-arrow-right
 						//- 	a(href="terms-of-service") Terms of service
-				.col-lg-4.col-md-6.footer-contact
+
+				.col-lg-3.col-md-6.footer-contact
 					h4 Contact Us
 					p
-						| Jalan Arjuna 4B Wirobrajan
+						strong Address :
+						|
+						| Jalan Arjuna 4B Wirobrajan Yogyakarta 55252
+
 						br
-						| Yogyakarta
-						br
-						| 55252
-						br
-						strong Phone:
+						strong Phone :
+						| 
 						| +6281 8999 771
+
 						br
-						strong Email:
+						strong Email :
+						| 
 						| contact@beehivedrones.com
-						br
+
 					.social-links
 						a.facebook(href="https://web.facebook.com/beehivedrone" target="_blank")
 							i.fa.fa-facebook
@@ -45,6 +49,13 @@ footer#footer
 							i.fa.fa-instagram
 						a.linkedin(href="https://www.linkedin.com/company/beehivedrones/" target="_blank")
 							i.fa.fa-linkedin
+
+				.col-lg-3.col-md-6.footer-newsletter
+					h4 Get Our Newsletter
+					p Want the latest and greatest from our blog straight to your inbox? Chuck us your details and get a sweet weekly email.
+					form(action="", method="post")
+						input(type="email", name="email")
+						input(type="submit", value="Subscribe")
 	.container
 		.copyright
 			| © Copyright
