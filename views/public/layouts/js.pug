@@ -17,6 +17,7 @@ script(src="/client/assets/js/main.js")
 //- script(src="/client/assets/js/custom.js")
 script(src="/client/assets/js/floating-wpp.js")
 
+
 script(type="text/javascript").
 	$(function () {
 		$('#myButton').floatingWhatsApp({
@@ -31,3 +32,23 @@ script(type="text/javascript").
 			buttonImage: '<img src="/client/assets/image/whatsapp.svg" />'
 		});
 	});
+
+script.
+	$(document).ready(function(){
+		$("#subscribe").submit(function(event) {
+			event.preventDefault();
+			var email = $("#subemail").val();
+			console.log({email})
+			$.ajax({
+				type: "POST",
+				url: "http://localhost:3005/web/v1/subscribe/save",
+				data: JSON.stringify({ email: email }),
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				success: function(data){
+					alert(data.message)
+				}
+			});
+		});
+	});
+	

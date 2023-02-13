@@ -53,9 +53,10 @@ footer#footer
 				.col-lg-3.col-md-6.footer-newsletter
 					h4 Get Our Newsletter
 					p Want the latest and greatest from our blog straight to your inbox? Chuck us your details and get a sweet weekly email.
-					form(action="", method="post")
-						input(type="email", name="email")
+					form#subscribe()
+						input#subemail(type="email", name="email")
 						input(type="submit", value="Subscribe")
+
 	.container
 		.copyright
 			| © Copyright
