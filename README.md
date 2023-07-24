@@ -1,4 +1,4 @@
-# beehive-company-profile
+# test-pt-cipta-integrasi-nusantara
 
 Beehive company profile.
 
@@ -11,7 +11,7 @@ Beehive company profile.
 Dev Enviroments:
 
 ```cmd
-$ cd beehive-company-profile
+$ cd test-pt-cipta-integrasi-nusantara
 $ npm install
 $ npm run dev
 ```
@@ -19,7 +19,7 @@ $ npm run dev
 Production Enviroments:
 
 ```cmd
-$ cd beehive-company-profile
+$ cd test-pt-cipta-integrasi-nusantara
 $ npm install
 $ npm start
 ```
@@ -59,5 +59,3 @@ localhost:3005
 ```link
 Coming soon
 ```
-
-# beehive-company-profile

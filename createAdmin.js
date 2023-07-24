@@ -14,10 +14,11 @@ const createAdmin = async () => {
 
     let admin = new model({
         password: passwordHash,
-        email: 'admin@beehivedrones.com',
-        name: 'Admin Beehive',
-        role: 'admin',
-        phone: '08324378979'
+        email: 'developer@beehivedrones.com',
+        name: 'Developer Beehive',
+        role: 'developer',
+        phone: '08324378979',
+        employee_id: '20200101001'
     });
 
     await admin.save()

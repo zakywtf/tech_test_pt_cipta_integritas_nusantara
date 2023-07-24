@@ -13,17 +13,12 @@ const Controller = {
             return apiResponse.validationErrorWithData(res, "Validation Error.", errors.array());
         }
 
-        if (req.files) {
-            const uploadedImage = req.files;
-
-            if (req.files.proof_of_payment){
-                req.body.proof_of_payment = uploadedImage.proof_of_payment[0]["location"];
-            }
-        }
-
         try {
+            const { email, password, name } = req.body
+            
+            let passwordHash = await bcrypt.hash(password + process.env.SALT, 10);
 
-            let user = new Users({ ...req.body });
+            let user = new Users({...req.body, password: passwordHash });
             
             user.save(async(err, user) => {
                 if (err) return apiResponse.ErrorResponse(res, err);
@@ -34,6 +29,7 @@ const Controller = {
 			return apiResponse.ErrorResponseWithData(res, 'Server Error', error);
         }
     },
+
     login: async (req, res, next) => {
         const errors = validationResult(req);
 
@@ -48,7 +44,6 @@ const Controller = {
                 _id: user._id,
                 name: user.name,
                 email: user.email,
-                role: user.role
             }
             const isMatch = await bcrypt.compare(req.body.password + process.env.SALT, user.password)
             if (!isMatch) return apiResponse.validationError(res, "Incorrect Password");
@@ -63,34 +58,15 @@ const Controller = {
         }
     },
 
-    change_pass:async (req, res, next) => {
-        const errors = validationResult(req);
-
-        if (!errors.isEmpty()) {
-            return apiResponse.validationErrorWithData(res, "Validation Error.", errors.array());
-        }
-
+    me: async (req, res, next) => {
         try {
-            const { old_password, new_password } = req.body;
-            let user = await Users.findOne({_id: req.user._id, isDeleted: false})
-            if(!user) return apiResponse.notFoundResponse(res, "user ID not found");
-
-            let newPasswordHash = await bcrypt.hash(new_password+user.email, 10);
-            const isMatch = await bcrypt.compare(old_password+user.email, user.password);
-
-            if (!isMatch)
-                return apiResponse.unauthorizedResponse(res, "Incorrect old password");
-
-            user.password = newPasswordHash
-            user.save((err, data) => {
-                if (err) return apiResponse.ErrorResponse(res, err);
-
-                return apiResponse.successResponseWithData(res, "Change password successfully.");
-            });
-          } catch (error) {
+            const user = await Users.findById(req.user._id).select('_id email name')
+            return apiResponse.successResponseWithData(res, "Data retrieved", user);
+        } catch (error) {
             return next(error);
-          }
-    }
+        }
+    },
+
 }
 
 module.exports = Controller;

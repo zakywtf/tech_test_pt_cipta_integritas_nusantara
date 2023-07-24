@@ -1,7 +1,7 @@
 {
-  "name": "beehive-company-profile",
+  "name": "sim-beehive",
   "version": "1.0.0",
-  "description": "Very Simple API for beehive-company-profile",
+  "description": "Very Simple API for sim-beehive",
   "author": {
     "name": "Nova Zaky",
     "email": "novazaky1@gmail.com"
